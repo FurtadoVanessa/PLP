@@ -1,0 +1,26 @@
+(define maxi
+	(lambda( x ls )
+	( if( null? (cdr ls) ) 
+		x ( maxi( max x (car (cdr ls)) )(cdr ls) ) ) ) 
+  ) 
+
+(define remove
+  (lambda
+    (l1 l2 rem)
+    ( 
+     if(null? l1) l2 ( 
+         if( not (= (car l1) rem ) ) 
+         ( remove (cdr l1) (cons (car l1) l2) rem ) ( remove (cdr l1) l2 rem )
+      )
+    )
+  )            
+)
+
+(define ordenar(lambda( ls ls2 ls3)( if(null? ls) ls2 ( ordenar ( remove ls ls3 (maxi (car ls) ls) ) (cons (maxi (car ls) ls) ls2 ) ls3 )   )
+                 ) 
+  )
+
+
+(define lista( list 7  2 10 3 1 28))
+(define lista2( list))
+(display (ordenar lista lista2 lista2) )

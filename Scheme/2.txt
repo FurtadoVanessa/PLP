@@ -1,0 +1,11 @@
+(define listaProduto
+  (lambda
+    (l1 l2 l3)(
+    if(null? l2) l1 ( listaProduto ( cons ( * (car l3) (car l2) ) l1 ) (cdr l3) (cdr l2)  )
+     )
+   )
+ )
+(define lista3(list 1 2 3))
+(define lista2(list 4 5 6))
+(define lista1(list))
+(display (listaProduto lista1 lista2 lista3))

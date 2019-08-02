@@ -1,0 +1,22 @@
+(define insere
+  (lambda
+    (l1 ins)
+    (cons ins l1)
+  )            
+)
+
+(define remove
+  (lambda
+    (l1 l2 rem)
+    ( 
+     if(null? l1) l2 ( 
+         if( not (= (car l1) rem ) ) 
+         ( remove (cdr l1) (cons (car l1) l2) rem ) ( remove (cdr l1) l2 rem )
+      )
+    )
+  )            
+)
+ 
+(define lista1(list 1 2 3 4))
+(define lista2(list))
+(display (remove lista1 lista2 3))

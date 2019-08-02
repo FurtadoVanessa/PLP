@@ -1,0 +1,26 @@
+class Conta{
+
+private int numero;
+protected String dono;
+private double saldo;
+private double limite;
+
+private void sacar(){
+	
+}
+
+public void depositar(){
+	
+}
+
+public boolean sacarValidando(){
+	
+}
+
+
+}
+
+
+//protected - acessavel pelo pai e suas filhas
+//private - acessavel apenas pela classe
+//public - publico a todas as classes que possuem acesso a classe

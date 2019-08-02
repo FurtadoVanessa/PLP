@@ -1,0 +1,57 @@
+(define montaCD
+  (lambda (listaMusicas tamanhoCD)
+      (musicas(melhor(combinacao(listaMusicas)) tamanhoCD (list ) 0 ))
+  )
+  )
+
+
+(define musicas
+  (lambda (lista)
+      (if (null? lista)
+          (lista)
+          (cons (car (car lista)) (quais (cdr lista)))
+          )
+    )
+  )
+
+
+(define melhor
+  (lambda (lista tamanhoCD listaCD tamanhoAtual)
+      (if (null? lista)
+          listaCD
+          (let ((tam (tamanho(car lista))))
+            (if (and (> tam tamanhoAtual) (<= tam tamanhoCD))
+                (melhor (cdr lista) tamanhoCD (car lista) tam)
+                (melhor (cdr lista) tamanhoCD listaCD tamanhoAtual)
+             )
+          )
+       )
+    )
+  )
+
+(define tamanho
+      (lambda (lista)
+      (if (null? lista)
+        0
+      (+ (car (cdr (car lista))) (tamanho (cdr lista)))
+  )
+  )
+  )
+
+(define (combinacao lista)
+  (if (null? lista)
+      '(())
+         (let 
+           ((rest (combinacao (cdr lista))))
+              (append 
+               (map 
+                (lambda (elemento) 
+                      (cons (car lista) elemento)
+                  )
+                rest)
+               rest)
+           )
+      )
+  )
+
+(display (montaCD (list (list 1 2) (list 3 4) (list 5 6)) 6))

@@ -1,0 +1,15 @@
+(define pa?
+  (lambda
+    (l1 r)
+        ( if(null? (cdr l1)) #t 
+           ( if ( = r (- (car(cdr l1)) ( car l1 ) ) )    
+               ( pa? (cdr l1) r ) #f )
+          )
+            
+    )
+        
+  )
+   
+ 
+(define lista1(list 3 4 6 8))
+(display (pa? lista1 2))

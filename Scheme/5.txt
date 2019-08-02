@@ -1,0 +1,10 @@
+(define inverte( lambda( ls2 ls )
+             ( if( null?  ls ) ls2 ( inverte (cons  (car ls) ls2) (cdr ls) ) ) ) 
+  )
+(define palindroma?(lambda ( l1 l2 ) ( if( equal? l1 l2) #t #f ) 
+                     )
+  )
+
+(define lista(list))
+(define lista1( list 'a' 'm' 'm' 'a'))
+(display  (palindroma? lista1 (inverte lista lista1) ) )
